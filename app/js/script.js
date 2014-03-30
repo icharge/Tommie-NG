@@ -8,7 +8,8 @@
 			// route for the home page
 			.when('/', {
 				templateUrl : 'view/home.html',
-				controller  : 'mainController'
+				controller  : 'mainController',
+				title: 'Home'
 			})
 
 			// route for the about page
@@ -32,17 +33,29 @@
 			.otherwise({ redirectTo: '/' });
 	});
 
+	myApp.factory('Page', function(){
+		var title = 'default';
+		return {
+			title: function() { return title; },
+			setTitle: function(newTitle) { title = newTitle; }
+		};
+	});
+
 	// create the controller and inject Angular's $scope
-	myApp.controller('mainController', function($scope) {
+	myApp.controller('mainController', function($scope, Page) {
 		// create a message to display in our view
 		$scope.message = 'Hello World สวัสดีชาวโลก';
+		$scope.Page = Page;
+		Page.setTitle('Home');
 	});
 
-	myApp.controller('aboutController', function($scope) {
+	myApp.controller('aboutController', function($scope, Page) {
 		$scope.message = 'Look! I am an about page.';
+		Page.setTitle('About');
 	});
 
-	myApp.controller('contactController', function($scope, $location, $http) {
+	myApp.controller('contactController', function($scope, Page, $location, $http) {
+		Page.setTitle('Contact');
 		$scope.message = 'Contact us! JK. This is just a demo.';
 		$scope.go = function ( path ) {
 			$location.path( path );
@@ -54,7 +67,7 @@
 		};
 	});
 
-	myApp.controller('registerController', function($scope, $http) {
+	myApp.controller('registerController', function($scope, Page, $http) {
 		$scope.errors = [];
 		$scope.msgs = [];
 

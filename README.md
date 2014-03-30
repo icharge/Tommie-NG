@@ -1,4 +1,7 @@
-projectangular
-==============
+Online Exam Management System (NG)
+==================================
 
-Project AngularJS testing
+Norrapat Nimmanee
+-----------------
+
+
