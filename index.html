@@ -2,19 +2,26 @@
 
 <!-- define angular app -->
 <html ng-app="myApp" ng-controller="mainController">
-
 <head>
-	<title>{{Page.title() + ' - Online Exam Management System'}}</title>
+	<title ng-bind="Page.title() + ' - Online Exam Management System'">Online Exam Management System</title>
 	<meta charset="utf-8">
+
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+	<link rel="stylesheet" href="app/css/style.css" />
 
 	<!-- SPELLS -->
 	<script src="vendor/js/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="vendor/js/angular.min.js"></script>
 	<script src="vendor/js/angular-route.js"></script>
+	<script src="vendor/js/angular-animate.min.js"></script>
+
+	<!-- loadingbar -->
+	<script src="vendor/js/loading-bar.min.js"></script>
+	<link href='vendor/css/loading-bar.min.css' rel='stylesheet' />
+
 	<script src="app/js/script.js"></script>
 </head>
 
@@ -38,7 +45,7 @@
 	<div id="main">
 	
 		<!-- angular view -->
-		<div ng-view></div>
+		<div class="content" ng-view ng-hide="fakeIntro"></div>
 		
 	</div>
 	

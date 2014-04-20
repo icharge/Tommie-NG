@@ -1,6 +1,6 @@
 <?php
 	include("../autostart.php");
-	
+	sleep(2);
 	$db->Table = "student";
 	$db->Where = "1";
 	$result = $db->RawSelect($numr);
