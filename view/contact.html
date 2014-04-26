@@ -8,5 +8,18 @@
 		</ul>
 		<button ng-click="getData()">รับข้อมูล</button>
 	</p>
+	<p>
+		<div>ทดสอบ Cookie</div> 
+		<span class="cookie">{{ msgcookie }}</span>
+		<button ng-click="setcookie()">setcookie()</button>
+		<button ng-click="readcookie()">readcookie()</button>
+	</p>
+	<p>
+		<div>ทดสอบ Session</div>
+		<span class="sesssion">{{msgsession}}</span>
+		<button ng-click="setsession()">setsession()</button>
+		<button ng-click="readsession()">readsession()</button>
+		<button ng-click="clearsession()">clearsession()</button>
+	</p>
 	<button ng-click="go('/')">กลับสู่หน้าหลัก</button>
 </div>

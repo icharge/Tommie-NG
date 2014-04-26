@@ -1,12 +1,12 @@
 ﻿<?php
-	include("../autostart.php");
+	require("../autostart.php");
 
 	$data = json_decode(file_get_contents("php://input"));
-
-	$stuid = (!empty($data->uid) ? mysql_real_escape_string($data->uid) : "");
-	$stuname = (!empty($data->uname) ? mysql_real_escape_string($data->uname) : "");
-	$stupwd = (!empty($data->pwd) ? mysql_real_escape_string($data->pwd) : "");
-	$stuemail = (!empty($data->email) ? mysql_real_escape_string($data->email) : "");
+	//$stuid = (!empty($data->uid) ? mysql_real_escape_string($data->uid) : "");
+	$stuid = pintput($data->uid);
+	$stuname = pinput($data->uname);
+	$stupwd = pinput($data->pwd);
+	$stuemail = pinput($data->email);
 	//$stumajor = ($data->student-major);
 	if(empty($stuid) or empty($stuname) or empty($stupwd) or empty($stuemail)) {
 		$arr = array('msg' => "", 'error' => 'กรุณากรอกข้อมูลให้ครบ');

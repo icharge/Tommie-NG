@@ -127,6 +127,31 @@
 				$scope.itemList = data;
 			});
 		};
+		$scope.setcookie = function() {
+			$http.get('app/server/setcookie.php').success(function(data){
+				$scope.msgcookie = data;
+			});
+		};
+		$scope.readcookie = function() {
+			$http.get('app/server/readcookie.php').success(function(data){
+				$scope.msgcookie = data;
+			});
+		};
+		$scope.setsession = function() {
+			$http.get('app/server/setsession.php').success(function(data){
+				$scope.msgsession = data;
+			});
+		};
+		$scope.readsession = function() {
+			$http.get('app/server/readsession.php').success(function(data){
+				$scope.msgsession = data;
+			});
+		};
+		$scope.clearsession = function() {
+			$http.get('app/server/clearsession.php').success(function(data){
+				$scope.msgsession = data;
+			});
+		};
 	});
 
 	myApp.controller('registerController', function($scope, Page, $http) {

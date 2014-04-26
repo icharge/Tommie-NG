@@ -4,8 +4,8 @@
  */
 
 	// This function return null -or- nothing -or- empty String when $dat is undefined //
-	function wempty($dat) {
-		return (!empty($dat) ? $dat : "");
+	function pinput($dat) {
+		return (!empty($dat) ? mysql_real_escape_string($dat) : "");
 	}
 
 	function wisset($dat) {
